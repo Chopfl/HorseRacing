@@ -1,3 +1,4 @@
+
 CREATE DATABASE HorseRacing
 
 go
@@ -9,13 +10,13 @@ go
 CREATE TABLE Races (
 race_id INT PRIMARY KEY IDENTITY,
 race_date DATETIME NOT NULL,
-venue VARCHAR(2) NOT NULL,
+venue VARCHAR(255) NOT NULL,
 race_no INT NOT NULL,
-config VARCHAR(8) NOT NULL,
+config VARCHAR(255) NOT NULL,
 surface INT NOT NULL DEFAULT 0,
-distance DECIMAL(5,2),
+distance int,
 going VARCHAR(128),
-horse_ratings VARCHAR(16),
+horse_ratings VARCHAR(266),
 prize DECIMAL(16,2),
 race_class INT,
 sec_time1 DECIMAL(5,2),
