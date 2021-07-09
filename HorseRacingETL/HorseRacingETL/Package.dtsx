@@ -11,8 +11,8 @@
   DTS:LocaleID="1045"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="6"
-  DTS:VersionGUID="{40DC4653-4EEB-47AF-A4C8-C232627A3B6C}">
+  DTS:VersionBuild="7"
+  DTS:VersionGUID="{A055C0F3-DB16-4D33-943B-17FA484D99A8}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -1448,6 +1448,1156 @@
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
+      DTS:refId="Package\Get Races"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{2625A004-70EC-463D-8433-57DC7C2D1C03}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Get Races"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Get Races\OLE DB Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE DB Destination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[Races]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1250</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">true</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Get Races\OLE DB Destination.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[LAPTOP-D7FSO9CH\HOMESQL.HorseRacingWH]"
+                  connectionManagerRefId="Package.ConnectionManagers[LAPTOP-D7FSO9CH\HOMESQL.HorseRacingWH]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Get Races\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Get Races\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[venue]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="venue"
+                      externalMetadataColumnId="Package\Get Races\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Venue]"
+                      lineageId="Package\Get Races\OLE DB Source.Outputs[OLE DB Source Output].Columns[venue]" />
+                    <inputColumn
+                      refId="Package\Get Races\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[surface]"
+                      cachedDataType="i4"
+                      cachedName="surface"
+                      externalMetadataColumnId="Package\Get Races\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Surface]"
+                      lineageId="Package\Get Races\OLE DB Source.Outputs[OLE DB Source Output].Columns[surface]" />
+                    <inputColumn
+                      refId="Package\Get Races\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[distance]"
+                      cachedDataType="i4"
+                      cachedName="distance"
+                      externalMetadataColumnId="Package\Get Races\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Distance]"
+                      lineageId="Package\Get Races\OLE DB Source.Outputs[OLE DB Source Output].Columns[distance]" />
+                    <inputColumn
+                      refId="Package\Get Races\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[prize]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="prize"
+                      externalMetadataColumnId="Package\Get Races\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Prize]"
+                      lineageId="Package\Get Races\OLE DB Source.Outputs[OLE DB Source Output].Columns[prize]" />
+                    <inputColumn
+                      refId="Package\Get Races\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[race_id]"
+                      cachedDataType="i4"
+                      cachedName="race_id"
+                      externalMetadataColumnId="Package\Get Races\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ID]"
+                      lineageId="Package\Get Races\OLE DB Source.Outputs[OLE DB Source Output].Columns[race_id]" />
+                    <inputColumn
+                      refId="Package\Get Races\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[race_date]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="race_date"
+                      externalMetadataColumnId="Package\Get Races\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[RaceDate]"
+                      lineageId="Package\Get Races\OLE DB Source.Outputs[OLE DB Source Output].Columns[race_date]" />
+                    <inputColumn
+                      refId="Package\Get Races\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[horse_ratings]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="horse_ratings"
+                      externalMetadataColumnId="Package\Get Races\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[HorseRatings]"
+                      lineageId="Package\Get Races\OLE DB Source.Outputs[OLE DB Source Output].Columns[horse_ratings]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Get Races\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ID]"
+                      dataType="i4"
+                      name="ID" />
+                    <externalMetadataColumn
+                      refId="Package\Get Races\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[RaceDate]"
+                      dataType="dbTimeStamp"
+                      name="RaceDate" />
+                    <externalMetadataColumn
+                      refId="Package\Get Races\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Venue]"
+                      codePage="1250"
+                      dataType="str"
+                      length="255"
+                      name="Venue" />
+                    <externalMetadataColumn
+                      refId="Package\Get Races\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Surface]"
+                      dataType="i4"
+                      name="Surface" />
+                    <externalMetadataColumn
+                      refId="Package\Get Races\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Distance]"
+                      dataType="i4"
+                      name="Distance" />
+                    <externalMetadataColumn
+                      refId="Package\Get Races\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[HorseRatings]"
+                      codePage="1250"
+                      dataType="str"
+                      length="255"
+                      name="HorseRatings" />
+                    <externalMetadataColumn
+                      refId="Package\Get Races\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Prize]"
+                      codePage="1250"
+                      dataType="str"
+                      length="255"
+                      name="Prize" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Get Races\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Get Races\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Get Races\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Get Races\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Get Races\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Get Races\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Get Races\OLE DB Source"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="OLE DB Source"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[Races]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1250</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Get Races\OLE DB Source.Connections[OleDbConnection]"
+                  connectionManagerID="{9544EFD3-8171-41BE-A386-42414A04761F}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[LAPTOP-D7FSO9CH_HOMESQL.HorseRacing]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Get Races\OLE DB Source.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Get Races\OLE DB Source.Outputs[OLE DB Source Output].Columns[race_id]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Get Races\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[race_id]"
+                      lineageId="Package\Get Races\OLE DB Source.Outputs[OLE DB Source Output].Columns[race_id]"
+                      name="race_id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Get Races\OLE DB Source.Outputs[OLE DB Source Output].Columns[time1]"
+                      codePage="1250"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Get Races\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[time1]"
+                      length="255"
+                      lineageId="Package\Get Races\OLE DB Source.Outputs[OLE DB Source Output].Columns[time1]"
+                      name="time1"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Get Races\OLE DB Source.Outputs[OLE DB Source Output].Columns[time2]"
+                      codePage="1250"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Get Races\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[time2]"
+                      length="255"
+                      lineageId="Package\Get Races\OLE DB Source.Outputs[OLE DB Source Output].Columns[time2]"
+                      name="time2"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Get Races\OLE DB Source.Outputs[OLE DB Source Output].Columns[time3]"
+                      codePage="1250"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Get Races\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[time3]"
+                      length="255"
+                      lineageId="Package\Get Races\OLE DB Source.Outputs[OLE DB Source Output].Columns[time3]"
+                      name="time3"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Get Races\OLE DB Source.Outputs[OLE DB Source Output].Columns[time4]"
+                      codePage="1250"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Get Races\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[time4]"
+                      length="255"
+                      lineageId="Package\Get Races\OLE DB Source.Outputs[OLE DB Source Output].Columns[time4]"
+                      name="time4"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Get Races\OLE DB Source.Outputs[OLE DB Source Output].Columns[time5]"
+                      codePage="1250"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Get Races\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[time5]"
+                      length="255"
+                      lineageId="Package\Get Races\OLE DB Source.Outputs[OLE DB Source Output].Columns[time5]"
+                      name="time5"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Get Races\OLE DB Source.Outputs[OLE DB Source Output].Columns[time6]"
+                      codePage="1250"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Get Races\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[time6]"
+                      length="255"
+                      lineageId="Package\Get Races\OLE DB Source.Outputs[OLE DB Source Output].Columns[time6]"
+                      name="time6"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Get Races\OLE DB Source.Outputs[OLE DB Source Output].Columns[race_date]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Get Races\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[race_date]"
+                      lineageId="Package\Get Races\OLE DB Source.Outputs[OLE DB Source Output].Columns[race_date]"
+                      name="race_date"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Get Races\OLE DB Source.Outputs[OLE DB Source Output].Columns[venue]"
+                      codePage="1250"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Get Races\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[venue]"
+                      length="255"
+                      lineageId="Package\Get Races\OLE DB Source.Outputs[OLE DB Source Output].Columns[venue]"
+                      name="venue"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Get Races\OLE DB Source.Outputs[OLE DB Source Output].Columns[race_no]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Get Races\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[race_no]"
+                      lineageId="Package\Get Races\OLE DB Source.Outputs[OLE DB Source Output].Columns[race_no]"
+                      name="race_no"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Get Races\OLE DB Source.Outputs[OLE DB Source Output].Columns[config]"
+                      codePage="1250"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Get Races\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[config]"
+                      length="255"
+                      lineageId="Package\Get Races\OLE DB Source.Outputs[OLE DB Source Output].Columns[config]"
+                      name="config"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Get Races\OLE DB Source.Outputs[OLE DB Source Output].Columns[surface]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Get Races\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[surface]"
+                      lineageId="Package\Get Races\OLE DB Source.Outputs[OLE DB Source Output].Columns[surface]"
+                      name="surface"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Get Races\OLE DB Source.Outputs[OLE DB Source Output].Columns[distance]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Get Races\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[distance]"
+                      lineageId="Package\Get Races\OLE DB Source.Outputs[OLE DB Source Output].Columns[distance]"
+                      name="distance"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Get Races\OLE DB Source.Outputs[OLE DB Source Output].Columns[going]"
+                      codePage="1250"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Get Races\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[going]"
+                      length="128"
+                      lineageId="Package\Get Races\OLE DB Source.Outputs[OLE DB Source Output].Columns[going]"
+                      name="going"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Get Races\OLE DB Source.Outputs[OLE DB Source Output].Columns[horse_ratings]"
+                      codePage="1250"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Get Races\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[horse_ratings]"
+                      length="255"
+                      lineageId="Package\Get Races\OLE DB Source.Outputs[OLE DB Source Output].Columns[horse_ratings]"
+                      name="horse_ratings"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Get Races\OLE DB Source.Outputs[OLE DB Source Output].Columns[prize]"
+                      codePage="1250"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Get Races\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[prize]"
+                      length="255"
+                      lineageId="Package\Get Races\OLE DB Source.Outputs[OLE DB Source Output].Columns[prize]"
+                      name="prize"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Get Races\OLE DB Source.Outputs[OLE DB Source Output].Columns[race_class]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Get Races\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[race_class]"
+                      lineageId="Package\Get Races\OLE DB Source.Outputs[OLE DB Source Output].Columns[race_class]"
+                      name="race_class"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Get Races\OLE DB Source.Outputs[OLE DB Source Output].Columns[sec_time1]"
+                      codePage="1250"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Get Races\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[sec_time1]"
+                      length="255"
+                      lineageId="Package\Get Races\OLE DB Source.Outputs[OLE DB Source Output].Columns[sec_time1]"
+                      name="sec_time1"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Get Races\OLE DB Source.Outputs[OLE DB Source Output].Columns[sec_time2]"
+                      codePage="1250"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Get Races\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[sec_time2]"
+                      length="255"
+                      lineageId="Package\Get Races\OLE DB Source.Outputs[OLE DB Source Output].Columns[sec_time2]"
+                      name="sec_time2"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Get Races\OLE DB Source.Outputs[OLE DB Source Output].Columns[sec_time3]"
+                      codePage="1250"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Get Races\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[sec_time3]"
+                      length="255"
+                      lineageId="Package\Get Races\OLE DB Source.Outputs[OLE DB Source Output].Columns[sec_time3]"
+                      name="sec_time3"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Get Races\OLE DB Source.Outputs[OLE DB Source Output].Columns[sec_time4]"
+                      codePage="1250"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Get Races\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[sec_time4]"
+                      length="255"
+                      lineageId="Package\Get Races\OLE DB Source.Outputs[OLE DB Source Output].Columns[sec_time4]"
+                      name="sec_time4"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Get Races\OLE DB Source.Outputs[OLE DB Source Output].Columns[sec_time5]"
+                      codePage="1250"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Get Races\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[sec_time5]"
+                      length="255"
+                      lineageId="Package\Get Races\OLE DB Source.Outputs[OLE DB Source Output].Columns[sec_time5]"
+                      name="sec_time5"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Get Races\OLE DB Source.Outputs[OLE DB Source Output].Columns[sec_time6]"
+                      codePage="1250"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Get Races\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[sec_time6]"
+                      length="255"
+                      lineageId="Package\Get Races\OLE DB Source.Outputs[OLE DB Source Output].Columns[sec_time6]"
+                      name="sec_time6"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Get Races\OLE DB Source.Outputs[OLE DB Source Output].Columns[sec_time7]"
+                      codePage="1250"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Get Races\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[sec_time7]"
+                      length="255"
+                      lineageId="Package\Get Races\OLE DB Source.Outputs[OLE DB Source Output].Columns[sec_time7]"
+                      name="sec_time7"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Get Races\OLE DB Source.Outputs[OLE DB Source Output].Columns[time7]"
+                      codePage="1250"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Get Races\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[time7]"
+                      length="255"
+                      lineageId="Package\Get Races\OLE DB Source.Outputs[OLE DB Source Output].Columns[time7]"
+                      name="time7"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Get Races\OLE DB Source.Outputs[OLE DB Source Output].Columns[place_combination1]"
+                      codePage="1250"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Get Races\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[place_combination1]"
+                      length="255"
+                      lineageId="Package\Get Races\OLE DB Source.Outputs[OLE DB Source Output].Columns[place_combination1]"
+                      name="place_combination1"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Get Races\OLE DB Source.Outputs[OLE DB Source Output].Columns[place_combination2]"
+                      codePage="1250"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Get Races\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[place_combination2]"
+                      length="255"
+                      lineageId="Package\Get Races\OLE DB Source.Outputs[OLE DB Source Output].Columns[place_combination2]"
+                      name="place_combination2"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Get Races\OLE DB Source.Outputs[OLE DB Source Output].Columns[place_combination3]"
+                      codePage="1250"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Get Races\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[place_combination3]"
+                      length="255"
+                      lineageId="Package\Get Races\OLE DB Source.Outputs[OLE DB Source Output].Columns[place_combination3]"
+                      name="place_combination3"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Get Races\OLE DB Source.Outputs[OLE DB Source Output].Columns[place_combination4]"
+                      codePage="1250"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Get Races\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[place_combination4]"
+                      length="255"
+                      lineageId="Package\Get Races\OLE DB Source.Outputs[OLE DB Source Output].Columns[place_combination4]"
+                      name="place_combination4"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Get Races\OLE DB Source.Outputs[OLE DB Source Output].Columns[place_divident1]"
+                      codePage="1250"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Get Races\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[place_divident1]"
+                      length="255"
+                      lineageId="Package\Get Races\OLE DB Source.Outputs[OLE DB Source Output].Columns[place_divident1]"
+                      name="place_divident1"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Get Races\OLE DB Source.Outputs[OLE DB Source Output].Columns[place_divident2]"
+                      codePage="1250"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Get Races\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[place_divident2]"
+                      length="255"
+                      lineageId="Package\Get Races\OLE DB Source.Outputs[OLE DB Source Output].Columns[place_divident2]"
+                      name="place_divident2"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Get Races\OLE DB Source.Outputs[OLE DB Source Output].Columns[place_divident3]"
+                      codePage="1250"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Get Races\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[place_divident3]"
+                      length="255"
+                      lineageId="Package\Get Races\OLE DB Source.Outputs[OLE DB Source Output].Columns[place_divident3]"
+                      name="place_divident3"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Get Races\OLE DB Source.Outputs[OLE DB Source Output].Columns[place_divident4]"
+                      codePage="1250"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Get Races\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[place_divident4]"
+                      length="255"
+                      lineageId="Package\Get Races\OLE DB Source.Outputs[OLE DB Source Output].Columns[place_divident4]"
+                      name="place_divident4"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Get Races\OLE DB Source.Outputs[OLE DB Source Output].Columns[win_combination1]"
+                      codePage="1250"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Get Races\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[win_combination1]"
+                      length="255"
+                      lineageId="Package\Get Races\OLE DB Source.Outputs[OLE DB Source Output].Columns[win_combination1]"
+                      name="win_combination1"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Get Races\OLE DB Source.Outputs[OLE DB Source Output].Columns[win_divident1]"
+                      codePage="1250"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Get Races\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[win_divident1]"
+                      length="255"
+                      lineageId="Package\Get Races\OLE DB Source.Outputs[OLE DB Source Output].Columns[win_divident1]"
+                      name="win_divident1"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Get Races\OLE DB Source.Outputs[OLE DB Source Output].Columns[win_combination2]"
+                      codePage="1250"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Get Races\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[win_combination2]"
+                      length="255"
+                      lineageId="Package\Get Races\OLE DB Source.Outputs[OLE DB Source Output].Columns[win_combination2]"
+                      name="win_combination2"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Get Races\OLE DB Source.Outputs[OLE DB Source Output].Columns[win_divident2]"
+                      codePage="1250"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Get Races\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[win_divident2]"
+                      length="255"
+                      lineageId="Package\Get Races\OLE DB Source.Outputs[OLE DB Source Output].Columns[win_divident2]"
+                      name="win_divident2"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Get Races\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[race_id]"
+                      dataType="i4"
+                      name="race_id" />
+                    <externalMetadataColumn
+                      refId="Package\Get Races\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[time1]"
+                      codePage="1250"
+                      dataType="str"
+                      length="255"
+                      name="time1" />
+                    <externalMetadataColumn
+                      refId="Package\Get Races\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[time2]"
+                      codePage="1250"
+                      dataType="str"
+                      length="255"
+                      name="time2" />
+                    <externalMetadataColumn
+                      refId="Package\Get Races\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[time3]"
+                      codePage="1250"
+                      dataType="str"
+                      length="255"
+                      name="time3" />
+                    <externalMetadataColumn
+                      refId="Package\Get Races\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[time4]"
+                      codePage="1250"
+                      dataType="str"
+                      length="255"
+                      name="time4" />
+                    <externalMetadataColumn
+                      refId="Package\Get Races\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[time5]"
+                      codePage="1250"
+                      dataType="str"
+                      length="255"
+                      name="time5" />
+                    <externalMetadataColumn
+                      refId="Package\Get Races\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[time6]"
+                      codePage="1250"
+                      dataType="str"
+                      length="255"
+                      name="time6" />
+                    <externalMetadataColumn
+                      refId="Package\Get Races\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[race_date]"
+                      dataType="dbTimeStamp"
+                      name="race_date" />
+                    <externalMetadataColumn
+                      refId="Package\Get Races\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[venue]"
+                      codePage="1250"
+                      dataType="str"
+                      length="255"
+                      name="venue" />
+                    <externalMetadataColumn
+                      refId="Package\Get Races\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[race_no]"
+                      dataType="i4"
+                      name="race_no" />
+                    <externalMetadataColumn
+                      refId="Package\Get Races\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[config]"
+                      codePage="1250"
+                      dataType="str"
+                      length="255"
+                      name="config" />
+                    <externalMetadataColumn
+                      refId="Package\Get Races\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[surface]"
+                      dataType="i4"
+                      name="surface" />
+                    <externalMetadataColumn
+                      refId="Package\Get Races\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[distance]"
+                      dataType="i4"
+                      name="distance" />
+                    <externalMetadataColumn
+                      refId="Package\Get Races\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[going]"
+                      codePage="1250"
+                      dataType="str"
+                      length="128"
+                      name="going" />
+                    <externalMetadataColumn
+                      refId="Package\Get Races\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[horse_ratings]"
+                      codePage="1250"
+                      dataType="str"
+                      length="255"
+                      name="horse_ratings" />
+                    <externalMetadataColumn
+                      refId="Package\Get Races\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[prize]"
+                      codePage="1250"
+                      dataType="str"
+                      length="255"
+                      name="prize" />
+                    <externalMetadataColumn
+                      refId="Package\Get Races\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[race_class]"
+                      dataType="i4"
+                      name="race_class" />
+                    <externalMetadataColumn
+                      refId="Package\Get Races\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[sec_time1]"
+                      codePage="1250"
+                      dataType="str"
+                      length="255"
+                      name="sec_time1" />
+                    <externalMetadataColumn
+                      refId="Package\Get Races\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[sec_time2]"
+                      codePage="1250"
+                      dataType="str"
+                      length="255"
+                      name="sec_time2" />
+                    <externalMetadataColumn
+                      refId="Package\Get Races\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[sec_time3]"
+                      codePage="1250"
+                      dataType="str"
+                      length="255"
+                      name="sec_time3" />
+                    <externalMetadataColumn
+                      refId="Package\Get Races\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[sec_time4]"
+                      codePage="1250"
+                      dataType="str"
+                      length="255"
+                      name="sec_time4" />
+                    <externalMetadataColumn
+                      refId="Package\Get Races\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[sec_time5]"
+                      codePage="1250"
+                      dataType="str"
+                      length="255"
+                      name="sec_time5" />
+                    <externalMetadataColumn
+                      refId="Package\Get Races\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[sec_time6]"
+                      codePage="1250"
+                      dataType="str"
+                      length="255"
+                      name="sec_time6" />
+                    <externalMetadataColumn
+                      refId="Package\Get Races\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[sec_time7]"
+                      codePage="1250"
+                      dataType="str"
+                      length="255"
+                      name="sec_time7" />
+                    <externalMetadataColumn
+                      refId="Package\Get Races\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[time7]"
+                      codePage="1250"
+                      dataType="str"
+                      length="255"
+                      name="time7" />
+                    <externalMetadataColumn
+                      refId="Package\Get Races\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[place_combination1]"
+                      codePage="1250"
+                      dataType="str"
+                      length="255"
+                      name="place_combination1" />
+                    <externalMetadataColumn
+                      refId="Package\Get Races\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[place_combination2]"
+                      codePage="1250"
+                      dataType="str"
+                      length="255"
+                      name="place_combination2" />
+                    <externalMetadataColumn
+                      refId="Package\Get Races\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[place_combination3]"
+                      codePage="1250"
+                      dataType="str"
+                      length="255"
+                      name="place_combination3" />
+                    <externalMetadataColumn
+                      refId="Package\Get Races\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[place_combination4]"
+                      codePage="1250"
+                      dataType="str"
+                      length="255"
+                      name="place_combination4" />
+                    <externalMetadataColumn
+                      refId="Package\Get Races\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[place_divident1]"
+                      codePage="1250"
+                      dataType="str"
+                      length="255"
+                      name="place_divident1" />
+                    <externalMetadataColumn
+                      refId="Package\Get Races\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[place_divident2]"
+                      codePage="1250"
+                      dataType="str"
+                      length="255"
+                      name="place_divident2" />
+                    <externalMetadataColumn
+                      refId="Package\Get Races\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[place_divident3]"
+                      codePage="1250"
+                      dataType="str"
+                      length="255"
+                      name="place_divident3" />
+                    <externalMetadataColumn
+                      refId="Package\Get Races\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[place_divident4]"
+                      codePage="1250"
+                      dataType="str"
+                      length="255"
+                      name="place_divident4" />
+                    <externalMetadataColumn
+                      refId="Package\Get Races\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[win_combination1]"
+                      codePage="1250"
+                      dataType="str"
+                      length="255"
+                      name="win_combination1" />
+                    <externalMetadataColumn
+                      refId="Package\Get Races\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[win_divident1]"
+                      codePage="1250"
+                      dataType="str"
+                      length="255"
+                      name="win_divident1" />
+                    <externalMetadataColumn
+                      refId="Package\Get Races\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[win_combination2]"
+                      codePage="1250"
+                      dataType="str"
+                      length="255"
+                      name="win_combination2" />
+                    <externalMetadataColumn
+                      refId="Package\Get Races\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[win_divident2]"
+                      codePage="1250"
+                      dataType="str"
+                      length="255"
+                      name="win_divident2" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Get Races\OLE DB Source.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Get Races\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[race_id]"
+                      dataType="i4"
+                      lineageId="Package\Get Races\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[race_id]"
+                      name="race_id" />
+                    <outputColumn
+                      refId="Package\Get Races\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[race_date]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Get Races\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[race_date]"
+                      name="race_date" />
+                    <outputColumn
+                      refId="Package\Get Races\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[venue]"
+                      codePage="1250"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\Get Races\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[venue]"
+                      name="venue" />
+                    <outputColumn
+                      refId="Package\Get Races\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[race_no]"
+                      dataType="i4"
+                      lineageId="Package\Get Races\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[race_no]"
+                      name="race_no" />
+                    <outputColumn
+                      refId="Package\Get Races\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[config]"
+                      codePage="1250"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\Get Races\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[config]"
+                      name="config" />
+                    <outputColumn
+                      refId="Package\Get Races\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[surface]"
+                      dataType="i4"
+                      lineageId="Package\Get Races\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[surface]"
+                      name="surface" />
+                    <outputColumn
+                      refId="Package\Get Races\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[distance]"
+                      dataType="i4"
+                      lineageId="Package\Get Races\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[distance]"
+                      name="distance" />
+                    <outputColumn
+                      refId="Package\Get Races\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[going]"
+                      codePage="1250"
+                      dataType="str"
+                      length="128"
+                      lineageId="Package\Get Races\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[going]"
+                      name="going" />
+                    <outputColumn
+                      refId="Package\Get Races\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[horse_ratings]"
+                      codePage="1250"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\Get Races\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[horse_ratings]"
+                      name="horse_ratings" />
+                    <outputColumn
+                      refId="Package\Get Races\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[prize]"
+                      codePage="1250"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\Get Races\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[prize]"
+                      name="prize" />
+                    <outputColumn
+                      refId="Package\Get Races\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[race_class]"
+                      dataType="i4"
+                      lineageId="Package\Get Races\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[race_class]"
+                      name="race_class" />
+                    <outputColumn
+                      refId="Package\Get Races\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[sec_time1]"
+                      codePage="1250"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\Get Races\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[sec_time1]"
+                      name="sec_time1" />
+                    <outputColumn
+                      refId="Package\Get Races\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[sec_time2]"
+                      codePage="1250"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\Get Races\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[sec_time2]"
+                      name="sec_time2" />
+                    <outputColumn
+                      refId="Package\Get Races\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[sec_time3]"
+                      codePage="1250"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\Get Races\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[sec_time3]"
+                      name="sec_time3" />
+                    <outputColumn
+                      refId="Package\Get Races\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[sec_time4]"
+                      codePage="1250"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\Get Races\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[sec_time4]"
+                      name="sec_time4" />
+                    <outputColumn
+                      refId="Package\Get Races\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[sec_time5]"
+                      codePage="1250"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\Get Races\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[sec_time5]"
+                      name="sec_time5" />
+                    <outputColumn
+                      refId="Package\Get Races\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[sec_time6]"
+                      codePage="1250"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\Get Races\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[sec_time6]"
+                      name="sec_time6" />
+                    <outputColumn
+                      refId="Package\Get Races\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[sec_time7]"
+                      codePage="1250"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\Get Races\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[sec_time7]"
+                      name="sec_time7" />
+                    <outputColumn
+                      refId="Package\Get Races\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[time1]"
+                      codePage="1250"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\Get Races\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[time1]"
+                      name="time1" />
+                    <outputColumn
+                      refId="Package\Get Races\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[time2]"
+                      codePage="1250"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\Get Races\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[time2]"
+                      name="time2" />
+                    <outputColumn
+                      refId="Package\Get Races\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[time3]"
+                      codePage="1250"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\Get Races\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[time3]"
+                      name="time3" />
+                    <outputColumn
+                      refId="Package\Get Races\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[time4]"
+                      codePage="1250"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\Get Races\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[time4]"
+                      name="time4" />
+                    <outputColumn
+                      refId="Package\Get Races\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[time5]"
+                      codePage="1250"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\Get Races\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[time5]"
+                      name="time5" />
+                    <outputColumn
+                      refId="Package\Get Races\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[time6]"
+                      codePage="1250"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\Get Races\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[time6]"
+                      name="time6" />
+                    <outputColumn
+                      refId="Package\Get Races\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[time7]"
+                      codePage="1250"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\Get Races\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[time7]"
+                      name="time7" />
+                    <outputColumn
+                      refId="Package\Get Races\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[place_combination1]"
+                      codePage="1250"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\Get Races\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[place_combination1]"
+                      name="place_combination1" />
+                    <outputColumn
+                      refId="Package\Get Races\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[place_combination2]"
+                      codePage="1250"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\Get Races\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[place_combination2]"
+                      name="place_combination2" />
+                    <outputColumn
+                      refId="Package\Get Races\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[place_combination3]"
+                      codePage="1250"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\Get Races\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[place_combination3]"
+                      name="place_combination3" />
+                    <outputColumn
+                      refId="Package\Get Races\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[place_combination4]"
+                      codePage="1250"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\Get Races\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[place_combination4]"
+                      name="place_combination4" />
+                    <outputColumn
+                      refId="Package\Get Races\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[place_divident1]"
+                      codePage="1250"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\Get Races\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[place_divident1]"
+                      name="place_divident1" />
+                    <outputColumn
+                      refId="Package\Get Races\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[place_divident2]"
+                      codePage="1250"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\Get Races\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[place_divident2]"
+                      name="place_divident2" />
+                    <outputColumn
+                      refId="Package\Get Races\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[place_divident3]"
+                      codePage="1250"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\Get Races\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[place_divident3]"
+                      name="place_divident3" />
+                    <outputColumn
+                      refId="Package\Get Races\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[place_divident4]"
+                      codePage="1250"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\Get Races\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[place_divident4]"
+                      name="place_divident4" />
+                    <outputColumn
+                      refId="Package\Get Races\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[win_combination1]"
+                      codePage="1250"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\Get Races\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[win_combination1]"
+                      name="win_combination1" />
+                    <outputColumn
+                      refId="Package\Get Races\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[win_divident1]"
+                      codePage="1250"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\Get Races\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[win_divident1]"
+                      name="win_divident1" />
+                    <outputColumn
+                      refId="Package\Get Races\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[win_combination2]"
+                      codePage="1250"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\Get Races\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[win_combination2]"
+                      name="win_combination2" />
+                    <outputColumn
+                      refId="Package\Get Races\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[win_divident2]"
+                      codePage="1250"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\Get Races\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[win_divident2]"
+                      name="win_divident2" />
+                    <outputColumn
+                      refId="Package\Get Races\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Get Races\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Get Races\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Get Races\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Get Races.Paths[OLE DB Source Output]"
+              endId="Package\Get Races\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              name="OLE DB Source Output"
+              startId="Package\Get Races\OLE DB Source.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
       DTS:refId="Package\Get Trainers"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Data Flow Task"
@@ -2646,6 +3796,14 @@
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 1"
       DTS:To="Package\Get Horses" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
+      DTS:CreationName=""
+      DTS:DTSID="{0CAA90A8-7D1B-46F1-931D-7D1286361B74}"
+      DTS:From="Package\Get Horses"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 2"
+      DTS:To="Package\Get Races" />
   </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
@@ -2662,29 +3820,29 @@
         <NodeLayout
           Size="130.4,41.6"
           Id="Package\Get Horses"
-          TopLeft="286.428576306421,318.117651520303" />
+          TopLeft="287.857147759321,280.647062759498" />
         <NodeLayout
           Size="134.4,41.6"
           Id="Package\Get Jockeys"
-          TopLeft="287.142862032871,225.588238457907" />
+          TopLeft="286.428576306421,204.176473451733" />
         <NodeLayout
           Size="136,41.6"
           Id="Package\Get Trainers"
           TopLeft="285.000004853521,130.000001823201" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="353.671433443196,171.600001823201">
+          TopLeft="353.314290579971,171.600001823201">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,53.9882366347065"
+              EndConnector="0,32.5764716285317"
               Start="0,0"
-              End="0,46.4882366347065">
+              End="0,25.0764716285317">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,46.4882366347065" />
+                    End="0,25.0764716285317" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2695,18 +3853,44 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="352.985719169646,267.188238457907">
+          TopLeft="353.342862032871,245.776473451733">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,50.929413062396"
+              EndConnector="0,34.8705893077654"
               Start="0,0"
-              End="0,43.429413062396">
+              End="0,27.3705893077654">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,43.429413062396" />
+                    End="0,27.3705893077654" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="125.6,41.6"
+          Id="Package\Get Races"
+          TopLeft="288.571433485771,346.882357413381" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 2]"
+          TopLeft="352.214290622546,322.247062759498">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,24.6352946538831"
+              Start="0,0"
+              End="0,17.1352946538831">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,17.1352946538831" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2985,6 +4169,70 @@
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Get Trainers\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Get Races">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="149.6,41.6"
+          Id="Package\Get Races\OLE DB Source"
+          TopLeft="250.714289983925,55.8235301946686" />
+        <NodeLayout
+          Size="170.4,41.6"
+          Id="Package\Get Races\OLE DB Destination"
+          TopLeft="238.571432634276,172.82353183555" />
+        <EdgeLayout
+          Id="Package\Get Races.Paths[OLE DB Source Output]"
+          TopLeft="324.6428613091,97.4235301946686">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,75.4000016408809"
+              Start="0,0"
+              End="0,67.9000016408809">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,67.9000016408809" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Get Races\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Get Races\OLE DB Destination">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
